@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccs2a5iwlnahc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_18b1b"]
+font_size = 32
+
+[node name="CardInfo" type="VBoxContainer"]
+
+[node name="CardFusionInfo" type="Label" parent="."]
+layout_mode = 2
+text = "#ID Name type dmg/def cod"
+label_settings = SubResource("LabelSettings_18b1b")
+vertical_alignment = 1
+
+[node name="CardFusionInfo2" type="Label" parent="."]
+layout_mode = 2
+text = "Result:"
+label_settings = SubResource("LabelSettings_18b1b")
+vertical_alignment = 1
+
+[node name="CardFusionInfo3" type="Label" parent="."]
+layout_mode = 2
+text = "#ID Name type dmg/def cod"
+label_settings = SubResource("LabelSettings_18b1b")
+vertical_alignment = 1

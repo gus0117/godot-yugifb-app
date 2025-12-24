@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqqn35uw0e6vl"]
+[gd_scene load_steps=5 format=3 uid="uid://cqqn35uw0e6vl"]
+
+[ext_resource type="PackedScene" uid="uid://ccs2a5iwlnahc" path="res://scenes/card_info/card_info.tscn" id="1_hyk8p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vom5j"]
 font_size = 32
@@ -19,7 +21,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="bgColor" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,9 +36,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -54,13 +60,34 @@ alignment = 1
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/SearchComponent"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 13.97
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 placeholder_text = "card name or number"
 clear_button_enabled = true
 caret_blink = true
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/SearchComponent"]
+[node name="BtnSearch" type="Button" parent="MarginContainer/VBoxContainer/SearchComponent"]
 layout_mode = 2
 shortcut = SubResource("Shortcut_hyk8p")
 text = "Search"
+
+[node name="BtnClear" type="Button" parent="MarginContainer/VBoxContainer/SearchComponent"]
+layout_mode = 2
+text = "Clear"
+
+[node name="CardFounded" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "#ID Name card type dmg/def cod"
+label_settings = SubResource("LabelSettings_vom5j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CardList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CardInfo" parent="MarginContainer/VBoxContainer/ScrollContainer/CardList" instance=ExtResource("1_hyk8p")]
+layout_mode = 2
