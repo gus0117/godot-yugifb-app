@@ -1,9 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccs2a5iwlnahc"]
+[gd_scene load_steps=3 format=3 uid="uid://ccs2a5iwlnahc"]
+
+[ext_resource type="Script" uid="uid://c6cvf7eaahx7m" path="res://scenes/card_info/card_info.gd" id="1_r1bjj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_18b1b"]
 font_size = 32
 
 [node name="CardInfo" type="VBoxContainer"]
+script = ExtResource("1_r1bjj")
 
 [node name="CardFusionInfo" type="Label" parent="."]
 layout_mode = 2
@@ -11,13 +14,13 @@ text = "#ID Name type dmg/def cod"
 label_settings = SubResource("LabelSettings_18b1b")
 vertical_alignment = 1
 
-[node name="CardFusionInfo2" type="Label" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 2
 text = "Result:"
 label_settings = SubResource("LabelSettings_18b1b")
 vertical_alignment = 1
 
-[node name="CardFusionInfo3" type="Label" parent="."]
+[node name="ResultCardInfo" type="Label" parent="."]
 layout_mode = 2
 text = "#ID Name type dmg/def cod"
 label_settings = SubResource("LabelSettings_18b1b")
