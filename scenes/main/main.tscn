@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqqn35uw0e6vl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vom5j"]
+font_size = 32
+
+[sub_resource type="InputEventKey" id="InputEventKey_vom5j"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_hyk8p"]
+events = [SubResource("InputEventKey_vom5j")]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bgColor" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Yugioh Forbiden memories PSX cards fusion"
+label_settings = SubResource("LabelSettings_vom5j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SearchComponent" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/SearchComponent"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 13.97
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+placeholder_text = "card name or number"
+clear_button_enabled = true
+caret_blink = true
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/SearchComponent"]
+layout_mode = 2
+shortcut = SubResource("Shortcut_hyk8p")
+text = "Search"
