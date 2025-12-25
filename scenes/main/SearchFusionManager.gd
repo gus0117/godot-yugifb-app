@@ -18,6 +18,7 @@ const TEXT_COLORS: Array = [Color.CORAL, Color.AQUAMARINE, Color.DEEP_PINK, Colo
 @onready var scroll_container_found_cards: ScrollContainer = $MarginContainer/VBoxContainer/ScrollContainerFoundCards
 @onready var fusion_title: Label = $MarginContainer/VBoxContainer/FusionTitle
 @onready var result_title: Label = $MarginContainer/VBoxContainer/ResultTitle
+@onready var btn_search: Button = $MarginContainer/VBoxContainer/SearchComponent/BtnSearch
 
 @export var text_only: bool = false
 
@@ -29,6 +30,10 @@ func _ready() -> void:
 	cards = get_data(CARDS_URL)
 	fusions = get_data(FUSIONS_URL)
 	reset()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("search"):
+		btn_search.emit_signal("pressed")
 
 func reset() -> void:
 	color_index = 0
@@ -86,7 +91,7 @@ func search_card() -> void:
 			result = results[0]
 			show_card_info(result)
 			# Mostrar fusiones
-			get_fusions(int(result["CardID"]))
+			fusion_list = get_fusions(int(result["CardID"]))
 			add_fusions_to_list(result, fusion_list)
 		else:
 			show_results(results)
