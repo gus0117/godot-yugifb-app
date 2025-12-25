@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c6cvf7eaahx7m" path="res://scenes/card_info/card_info.gd" id="1_r1bjj"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_18b1b"]
+[sub_resource type="LabelSettings" id="LabelSettings_g1jmv"]
 font_size = 32
 
 [node name="CardInfo" type="VBoxContainer"]
@@ -10,18 +10,22 @@ script = ExtResource("1_r1bjj")
 
 [node name="CardFusionInfo" type="Label" parent="."]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "#ID Name type dmg/def cod"
-label_settings = SubResource("LabelSettings_18b1b")
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
 text = "Result:"
-label_settings = SubResource("LabelSettings_18b1b")
+label_settings = SubResource("LabelSettings_g1jmv")
 vertical_alignment = 1
 
 [node name="ResultCardInfo" type="Label" parent="."]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "#ID Name type dmg/def cod"
-label_settings = SubResource("LabelSettings_18b1b")
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
 vertical_alignment = 1

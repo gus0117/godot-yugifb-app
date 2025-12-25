@@ -83,13 +83,41 @@ label_settings = SubResource("LabelSettings_vom5j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+[node name="FusionTitle" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Fusion with:"
+label_settings = SubResource("LabelSettings_vom5j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResultTitle" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Results:"
+label_settings = SubResource("LabelSettings_vom5j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainerFusions" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CardList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="CardList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainerFusions"]
 layout_mode = 2
 alignment = 1
 
-[node name="CardInfo" parent="MarginContainer/VBoxContainer/ScrollContainer/CardList" instance=ExtResource("1_hyk8p")]
+[node name="ScrollContainerFoundCards" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CardList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainerFoundCards"]
+layout_mode = 2
+alignment = 1
+
+[node name="CardInfo" parent="MarginContainer/VBoxContainer/ScrollContainerFoundCards/CardList" instance=ExtResource("1_hyk8p")]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SearchComponent/BtnSearch" to="." method="on_btn_search"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SearchComponent/BtnClear" to="." method="on_btn_clear"]
