@@ -1,19 +1,19 @@
-extends VBoxContainer
+extends HBoxContainer
 
 class_name CardInfo
 
-@onready var card_fusion_info: Label = $CardFusionInfo
-@onready var result_card_info: Label = $ResultCardInfo
+@onready var card_image: CardImageManager = $CardImage
+@onready var card_id_name: Label = $Atributes/CardIDName
+@onready var type: Label = $Atributes/Type
+@onready var dmg_def: Label = $Atributes/DmgDef
+@onready var password: Label = $Atributes/Password
 
-
-func show_card(cfi: String = "No card", result: String = "No result", color: Color = Color.WHITE)->void:
-	print(color)
-	card_fusion_info.text = cfi
-	#card_fusion_info.label_settings.font_color = color
-	card_fusion_info.add_theme_color_override("font_color", color)
-	result_card_info.text = result
-	#result_card_info.label_settings.font_color = color
-	result_card_info.add_theme_color_override("font_color", color)
+func set_card(card: Dictionary)->void:
+	card_image.set_card_by_id(int(card["CardID"]))
+	card_id_name.text = "#"+str(int(card["CardID"]))+" "+card["CardName"]
+	type.text = card["CardType"]
+	dmg_def.text = str(int(card["Attack"]))+"/"+str(int(card["Defense"]))
+	password.text = str(int(card["Password"]))
 
 func remove_this_card() -> void:
 	queue_free()

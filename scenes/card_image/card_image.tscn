@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr1k0655cfbxs"]
+
+[ext_resource type="Texture2D" uid="uid://b1nrjuqryomj2" path="res://assets/PlayStation - Yu-Gi-Oh! Forbidden Memories - Cards - Cards (Large).png" id="1_0e12q"]
+[ext_resource type="Script" uid="uid://5uafk8stfuis" path="res://scenes/card_image/card_image.gd" id="1_bsuku"]
+
+[node name="CardImage" type="Control"]
+layout_mode = 3
+anchor_right = 0.083000004
+anchor_bottom = 0.13900001
+offset_right = -0.2400055
+offset_bottom = -0.08000946
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bsuku")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardSheet" type="Sprite2D" parent="."]
+position = Vector2(53, 50)
+texture = ExtResource("1_0e12q")
+region_enabled = true
+region_rect = Rect2(3, 3, 106, 100)

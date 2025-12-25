@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://c43t2moi1d3jj"]
+
+[ext_resource type="PackedScene" uid="uid://ccs2a5iwlnahc" path="res://scenes/card_info/card_info.tscn" id="1_3cetn"]
+[ext_resource type="Script" uid="uid://ryvda6ilnrt7" path="res://scenes/fusion_container/fusion_container_manager.gd" id="1_668eg"]
+
+[node name="FusionContainer" type="HBoxContainer"]
+theme_override_constants/separation = 50
+script = ExtResource("1_668eg")
+
+[node name="FusionId" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "#1"
+
+[node name="Material_1" parent="." instance=ExtResource("1_3cetn")]
+layout_mode = 2
+
+[node name="Plus" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Material_2" parent="." instance=ExtResource("1_3cetn")]
+layout_mode = 2
+
+[node name="Equal" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "="
+
+[node name="Result" parent="." instance=ExtResource("1_3cetn")]
+layout_mode = 2

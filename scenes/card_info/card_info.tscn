@@ -1,31 +1,40 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccs2a5iwlnahc"]
 
 [ext_resource type="Script" uid="uid://c6cvf7eaahx7m" path="res://scenes/card_info/card_info.gd" id="1_r1bjj"]
+[ext_resource type="PackedScene" uid="uid://dr1k0655cfbxs" path="res://scenes/card_image/card_image.tscn" id="2_g1jmv"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_g1jmv"]
-font_size = 32
-
-[node name="CardInfo" type="VBoxContainer"]
+[node name="Card" type="HBoxContainer"]
+offset_right = 671.0
+offset_bottom = 45.0
+theme_override_constants/separation = 110
 script = ExtResource("1_r1bjj")
 
-[node name="CardFusionInfo" type="Label" parent="."]
+[node name="CardImage" parent="." instance=ExtResource("2_g1jmv")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "#ID Name type dmg/def cod"
+
+[node name="Atributes" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="CardIDName" type="Label" parent="Atributes"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "#ID Name"
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="Type" type="Label" parent="Atributes"]
 layout_mode = 2
-text = "Result:"
-label_settings = SubResource("LabelSettings_g1jmv")
+theme_override_font_sizes/font_size = 15
+text = "Type"
 vertical_alignment = 1
 
-[node name="ResultCardInfo" type="Label" parent="."]
+[node name="DmgDef" type="Label" parent="Atributes"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "#ID Name type dmg/def cod"
+theme_override_font_sizes/font_size = 15
+text = "atk/def"
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
+[node name="Password" type="Label" parent="Atributes"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Password"
 vertical_alignment = 1
